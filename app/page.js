@@ -1,26 +1,30 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Rubik } from "next/font/google";
-import WeatherInfo from "./components/WeatherInfo";
-import PrayerTimes from "./components/PrayerTimes";
-import { fetchWeather, fetchPrayerTimes } from "./utils/api";
+import React, { useState, useEffect } from 'react';
+import { Rubik } from 'next/font/google';
+import WeatherInfo from './components/WeatherInfo';
+import PrayerTimes from './components/PrayerTimes';
+import { fetchWeather, fetchPrayerTimes } from './utils/api';
 
-const rubik = Rubik({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ['latin'] });
 
 export default function Home() {
   const [weather, setWeather] = useState(null);
   const [prayerTimes, setPrayerTimes] = useState(null);
   const [loadingWeather, setLoadingWeather] = useState(true);
   const [loadingPrayer, setLoadingPrayer] = useState(true);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
+
+    // Fetch data cuaca
     const getWeather = async () => {
       const weatherData = await fetchWeather();
       setWeather(weatherData);
       setLoadingWeather(false);
     };
 
+    // Fetch data cuaca dan waktu sholat
     const getPrayerTimes = async () => {
       const prayerTimesData = await fetchPrayerTimes();
       setPrayerTimes(prayerTimesData);
@@ -29,6 +33,16 @@ export default function Home() {
 
     getWeather();
     getPrayerTimes();
+
+    // Update waktu setiap detik
+    const updateCurrentTime = () => {
+      setCurrentTime(new Date());
+      requestAnimationFrame(updateCurrentTime);
+    };
+
+    const animationFrameId = requestAnimationFrame(updateCurrentTime);
+
+    return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
   return (
@@ -53,7 +67,7 @@ export default function Home() {
           <div className="card border p-6 mb-4 flex justify-center items-center bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg shadow-xl">
             <div>
               <h1 className="text-5xl font-bold text-center">
-                {new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </h1>
               <h2 className="text-center text-lg">Jam Sekarang</h2>
             </div>
