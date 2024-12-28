@@ -2,20 +2,226 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+    --retro-pink: #ff77ff;
+    --retro-blue: #00ccff;
+    --retro-purple: #aa00ff;
+    --retro-yellow: #ffee00;
+    --retro-black: #333333;
+    --retro-white: #ffffff;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: "Rubik", sans-serif;
+    background-color: #82e6ff;
+}
+
+/* Background Colors */
+.bg-blue {
+    background-color: #82e6ff;
+    /* Teks putih untuk kontras */
+}
+
+.bg-purple {
+    background-color: rgb(227, 150, 255);
+
+}
+
+.bg-red {
+    background-color: #ffa1a1;
+
+}
+
+.bg-yellow {
+    background-color: #fff89c;
+    /* Kuning */
+    color: #000000;
+    /* Teks hitam untuk kontras */
+}
+
+.bg-green {
+    background-color: #62fff5;
+    /* Hijau */
+    color: #000000;
+}
+
+.bg-orange {
+    background-color: #fd7e14;
+    /* Oranye */
+    color: #ffffff;
+}
+
+.bg-pink {
+    background-color: #e83e8c;
+    /* Merah muda */
+    color: #ffffff;
+}
+
+.bg-teal {
+    background-color: #20c997;
+    /* Hijau kebiruan */
+    color: #ffffff;
+}
+
+.bg-black {
+    background-color: #343a40;
+    /* Hitam */
+    color: #ffffff;
+}
+
+.bg-white {
+    background-color: #ffffff;
+    /* Putih */
+    color: #000000;
+    /* Teks hitam untuk kontras */
+}
+
+.container {
+    padding: 20px;
+}
+
+.mt-1 {
+    margin-top: 10px;
+}
+.ms-1 {
+    margin-right: 10px;
+}
+
+.ms-2 {
+    margin-right: 20px;
+}
+
+.ms-3 {
+    margin-right: 30px;
+}
+
+.ms-4 {
+    margin-right: 40px;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.p-1 {
+    padding: 10px;
+}
+
+.p-2 {
+    padding: 20px;
+}
+
+.p-3 {
+    padding: 30px;
+}
+
+.p-4 {
+    padding: 40px;
+}
+
+.border {
+    border: #000000 3px solid;
+}
+
+.input-retro {
+    border: #000000 2px solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+    transform: translate(-5px, -5px);
+    font-family: "Rubik", sans-serif;
+    /* Posisi awal (tidak fokus) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transisi halus */
+}
+
+.input-retro:focus {
+    transform: translate(0, 0);
+    /* Kembali ke posisi semula */
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+    /* Hilangkan bayangan saat fokus */
+    outline: none;
+}
+.d-flex {
+    display: flex;
+}
+.checkbox-retro {
+    border: #000000 2px solid;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+    transform: translate(-2px, -2px);
+    outline: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+
+    background-color: #ffffff; /* Warna latar belakang */
+    width: 17px;
+    height: 17px;
+    position: relative; /* Agar centang bisa muncul di dalam kotak */
+}
+
+/* Efek saat checkbox dicentang */
+.checkbox-retro:checked {
+    background-color: #ff0000; /* Ubah latar belakang menjadi biru saat dicentang */
+    border-color: #480030; /* Warna border ketika dicentang */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    transform: translate(0px, 0px);
+}
+
+/* Menambahkan simbol centang ketika dicentang */
+.checkbox-retro:checked::after {
+    position: absolute;
+    top: -2px;
+    left: 3px;
+    color: white;
+    background-color: transparent;
+    font-size: 12px;
+}
+
+
+
+/* Efek saat hover pada checkbox */
+
+
+.text-jumbo{
+  font-size: 3rem;
+
+}
+
+.text-regular{
+  font-size: 1.5rem;
+}
+/* Card Style */
+.card {
+    background-color: var(--retro-white);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 10px 10px 0px 2px rgba(0, 0, 0, 1);
+    margin: 10px 0;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.card-header {
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-body {
+    padding: 20px;
+    color: var(--retro-black);
+    font-size: 16px;
+}
+
+.card-footer {
+    padding: 10px;
+    text-align: right;
+    font-size: 14px;
+    color: var(--retro-black);
+    font-weight: bold;
 }

@@ -1,101 +1,71 @@
 import Image from "next/image";
+import { Rubik } from 'next/font/google';
+
+// Mengimpor font Rubik
+const rubik = Rubik({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className={`p-6 ${rubik.className}`} >
+      {/* Header utama */}
+      <div className="text-center mb-3">
+        <h1 className="text-5xl font-bold">Masjidil Salabisalam </h1>
+        <h2 className="text-2xl ">Ahlan Wa Sahlan</h2>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Grid tata letak */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Kolom pertama: Suhu, Kelembapan, dan Gambar */}
+        <div className="card border p-4 flex flex-col items-center bg-white bg-opacity-80 rounded-xl">
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className="flex flex-col">
+          {/* Jam Sekarang */}
+          <div className="card border p-6 mb-4 flex justify-center items-center bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg shadow-xl">
+            <div>
+              <h1 className="text-5xl font-bold text-center">14:00</h1>
+              <h2 className="text-center text-lg">Jam Sekarang</h2>
+            </div>
+          </div>
+
+          {/* Jadwal Solat */}
+          <div className="card border bg-white bg-opacity-80 rounded-xl">
+            <div className="bg-red p-2 text-xl font-bold rounded-t-lg">Jadwal Solat</div>
+            <div className="p-2 ">
+              <table className="table-auto w-full border-collapse">
+                <thead>
+                  <tr className="border">
+                    <th className="text-left px-4 py-2">Sholat</th>
+                    <th className="text-left px-4 py-2">Waktu</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border">
+                    <td className="px-4 py-2">Subuh</td>
+                    <td className="px-4 py-2">04:30</td>
+                  </tr>
+                  <tr className="border">
+                    <td className="px-4 py-2">Dzuhur</td>
+                    <td className="px-4 py-2">12:00</td>
+                  </tr>
+                  <tr className="border">
+                    <td className="px-4 py-2">Asar</td>
+                    <td className="px-4 py-2">15:30</td>
+                  </tr>
+                  <tr className="border">
+                    <td className="px-4 py-2">Maghrib</td>
+                    <td className="px-4 py-2">18:00</td>
+                  </tr>
+                  <tr className="border">
+                    <td className="px-4 py-2">Isya</td>
+                    <td className="px-4 py-2">19:30</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
