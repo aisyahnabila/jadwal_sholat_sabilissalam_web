@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Rubik } from 'next/font/google';
-
+import logo from './assets/images/logo.jpg'
 // Mengimpor font Rubik
 const rubik = Rubik({ subsets: ['latin'] });
 
@@ -14,10 +14,29 @@ export default function Home() {
       </div>
 
       {/* Grid tata letak */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Kolom pertama: Suhu, Kelembapan, dan Gambar */}
-        <div className="card border p-4 flex flex-col items-center bg-white bg-opacity-80 rounded-xl">
+        <div>
+          <div className="card border p-2">
+           
+            <Image
+              src={logo}
+              alt="Logo Masjid"
+              width={'50%'}
+              height={'50%'}
+            />
+          </div>
+          <div className="card border p-2">
+            <h1>INI POSTER</h1>
+            {/* <Image
+              src={logo}
+              alt="Logo Masjid"
+              width={'50%'}
+              height={'50%'}
+            /> */}
+          </div>
         </div>
+
 
         <div className="flex flex-col">
           {/* Jam Sekarang */}
@@ -32,31 +51,31 @@ export default function Home() {
           <div className="card border bg-white bg-opacity-80 rounded-xl">
             <div className="bg-red p-2 text-xl font-bold rounded-t-lg">Jadwal Solat</div>
             <div className="p-2 ">
-              <table className="table-auto w-full border-collapse">
+              <table className="table-auto w-full border">
                 <thead>
-                  <tr className="border">
+                  <tr className=" bg-purple">
                     <th className="text-left px-4 py-2">Sholat</th>
                     <th className="text-left px-4 py-2">Waktu</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border">
+                  <tr className="border-b-2 border-black">
                     <td className="px-4 py-2">Subuh</td>
                     <td className="px-4 py-2">04:30</td>
                   </tr>
-                  <tr className="border">
+                  <tr className="border-b-2 border-black">
                     <td className="px-4 py-2">Dzuhur</td>
                     <td className="px-4 py-2">12:00</td>
                   </tr>
-                  <tr className="border">
+                  <tr className="border-b-2 border-black">
                     <td className="px-4 py-2">Asar</td>
                     <td className="px-4 py-2">15:30</td>
                   </tr>
-                  <tr className="border">
+                  <tr className="border-b-2 border-black">
                     <td className="px-4 py-2">Maghrib</td>
                     <td className="px-4 py-2">18:00</td>
                   </tr>
-                  <tr className="border">
+                  <tr className="border-b-2 border-black">
                     <td className="px-4 py-2">Isya</td>
                     <td className="px-4 py-2">19:30</td>
                   </tr>
@@ -65,6 +84,13 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="">
+
+          <div className="card border p-2">
+            <h1>MALANG -</h1>
+          </div>
+        </div>
+
       </div>
     </div>
   );
