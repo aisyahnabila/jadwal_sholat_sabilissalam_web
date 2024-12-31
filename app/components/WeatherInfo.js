@@ -62,8 +62,7 @@ const WeatherInfo = ({ weather }) => {
     <div>
       <div className="card border p-2 bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded-xl shadow-xl">
         <h2 className="text-3xl font-bold mb-6 text-center">Cuaca Malang Hari ini</h2>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-1">
+        <div className="grid justify-start items-center grid-cols-2 md:grid-cols-6 gap-1">
           {weatherData.map((item, index) => {
             // Parsing waktu untuk mengekstrak jam dan menit
             const date = new Date(item.local_datetime);
@@ -77,7 +76,7 @@ const WeatherInfo = ({ weather }) => {
             return (
               <div
                 key={index}
-                className="flex border flex-col items-center bg-white bg-opacity-20 rounded-lg"
+                className="flex border flex-col items-center card bg-opacity-20 rounded-lg"
               >
                 <div>
                   <Image
@@ -89,7 +88,7 @@ const WeatherInfo = ({ weather }) => {
                   />
                 </div>
                 <h3 className="text-md sm:text-lg font-bold">{item.t}°C</h3>
-                <p className="text-sm sm:text-base md:text-md">{time}</p> {/* Tampilkan waktu */}
+                <p className="text-sm text-black sm:text-base md:text-md">{time}</p> {/* Tampilkan waktu */}
               </div>
             );
           })}

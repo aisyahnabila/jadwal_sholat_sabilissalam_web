@@ -1,4 +1,6 @@
 // utils/api.js
+
+
 export const fetchWeather = async () => {
   try {
     const response = await fetch('https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4=35.73.05.1010');
