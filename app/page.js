@@ -100,7 +100,7 @@ export default function Home() {
     <div className={`p-6 ${rubik.className}`}>
       {/* Header utama */}
       <div className="text-center mb-8">
-        <h1 className="text-5xl text-white font-bold">Masjid Sabilissalam</h1>
+        <h1 className="text-5xl text-white font-bold">Masjidil Sabilissalam</h1>
         <h1 className="text-3xl text-white">حافظه الله</h1>
       </div>
 
