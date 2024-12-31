@@ -89,7 +89,7 @@ const WeatherInfo = ({ weather }) => {
                   />
                 </div>
                 <h3 className="text-md sm:text-lg font-bold">{item.t}°C</h3>
-                <p className="text-sm sm:text-base md:text-md">{time}</p> {/* Menampilkan waktu yang sudah diformat */}
+                <p className="text-sm sm:text-base md:text-md">{time}</p> {/* Tampilkan waktu */}
               </div>
             );
           })}
