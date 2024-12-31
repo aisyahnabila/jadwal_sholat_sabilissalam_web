@@ -63,7 +63,7 @@ const WeatherInfo = ({ weather }) => {
       <div className="card border p-4 bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded-xl shadow-xl">
         <h2 className="text-3xl font-bold mb-6 text-center">Cuaca Malang Hari ini</h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-1">
+        <div className="grid justify-start items-center grid-cols-2 md:grid-cols-6 gap-1">
           {weatherData.map((item, index) => {
             // Parsing waktu untuk mengekstrak jam dan menit
             const date = new Date(item.local_datetime);
