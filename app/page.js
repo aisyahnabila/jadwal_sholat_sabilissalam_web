@@ -123,9 +123,9 @@ export default function Home() {
         {/* Kolom kedua */}
         <div className="flex flex-col min-h-full">
           {/* Jam Sekarang */}
-          <div className="card border p-6 flex justify-center items-center bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg shadow-xl">
+          <div className="card border p-6 flex justify-center items-center bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg shadow-xl text-white">
             <div>
-              <h1 className="text-5xl font-bold text-center">{currentTime}</h1>
+              <h1 className="text-7xl font-bold  text-center">{currentTime}</h1>
               <h2 className="text-center text-lg">Jam Sekarang</h2>
             </div>
           </div>
@@ -143,9 +143,9 @@ export default function Home() {
 
         {/* Kolom ketiga */}
         <div className="flex flex-col min-h-full">
-          <div className="card p-3 border text-3xl font-bold overflow-hidden">
+          <div className="card p-3 border text-3xl font-bold overflow-hidden ">
             <div className="scrolling-text">
-              SELAMAT DATANG JAMAAH MASJID SABILISSALAM MALANG KEC LOWOKWARU, TULUSREJO
+              SELAMAT DATANG JAMA'AH MASJID SABILISSALAM MALANG KEC LOWOKWARU, TULUSREJO
             </div>
           </div>
           <div className="card border w-full h-96">
